@@ -30,4 +30,6 @@ pip3 install -e .
 pip3 install black
 pip3 install isort
 pip3 install jupyter
+pip3 install jupyterlab
+pip3 install jupyterlab_vim
 
