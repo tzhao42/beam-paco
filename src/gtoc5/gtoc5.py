@@ -8,11 +8,11 @@ from math import sqrt, log
 import os, inspect, pickle
 
 import numpy as np
-import PyKEP as pk
+import pykep as pk
 
-from .constants import *
-from .lambert import lambert_eval, lambert_optimize_dt
-from .multiobjective import rate_traj
+from src.gtoc5.constants import *
+from src.gtoc5.lambert import lambert_eval, lambert_optimize_dt
+from src.gtoc5.multiobjective import rate_traj
 
 
 

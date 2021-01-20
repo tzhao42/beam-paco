@@ -7,9 +7,9 @@
 from math import sqrt, sin, cos, acos, pi
 
 import numpy as np
-import PyKEP as pk
+import pykep as pk
 
-from .constants import MU_SUN, AU, EARTH_VELOCITY, DAY2SEC, asteroids
+from src.gtoc5.constants import MU_SUN, AU, EARTH_VELOCITY, DAY2SEC, asteroids
 
 
 

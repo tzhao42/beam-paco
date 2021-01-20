@@ -7,7 +7,7 @@ Compilation of high-scoring trajectories.
 # Licensed under the MIT License. See the LICENSE file for details.
 
 
-from .gtoc5 import *
+from src.gtoc5 import *
 
 
 

@@ -8,11 +8,11 @@ from math import sqrt, exp
 from functools import wraps, partial #, total_ordering
 
 import numpy as np
-import PyKEP as pk
+import pykep as pk
 from scipy.optimize import minimize_scalar
 
-from .constants import MU_SUN, G0, SEC2DAY, DAY2SEC, I_sp, T_max, thrust_tol
-from .multiobjective import pareto_front
+from src.gtoc5.constants import MU_SUN, G0, SEC2DAY, DAY2SEC, I_sp, T_max, thrust_tol
+from src.gtoc5.multiobjective import pareto_front
 
 
 

@@ -15,11 +15,11 @@ from functools import lru_cache
 from itertools import combinations
 from collections import namedtuple, Counter
 
-from paco import *
+from src.paco import *
 
-from gtoc5 import *
-from gtoc5.phasing import rate__euclidean, rate__orbital, rate__orbital_2
-from gtoc5.multiobjective import *
+from src.gtoc5 import *
+from src.gtoc5.phasing import rate__euclidean, rate__orbital, rate__orbital_2
+from src.gtoc5.multiobjective import *
 
 
 

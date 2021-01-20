@@ -7,9 +7,9 @@
 from math import sqrt, exp, radians
 
 import numpy as np
-import PyKEP as pk
+import pykep as pk
 
-from .ast_ephem import body, body_names
+from src.gtoc5.ast_ephem import body, body_names
 
 
 
@@ -17,7 +17,7 @@ from .ast_ephem import body, body_names
 # Source: GTOC5 problem statement
 # http://dx.doi.org/10.2420/AF08.2014.9
 
-# Sun's gravitational parameter µ_S, m^3/s^2
+# Sun's gravitational parameter ï¿½_S, m^3/s^2
 MU_SUN = 1.32712440018e11 * 1000**3
 
 # Astronomical Unit AU, m

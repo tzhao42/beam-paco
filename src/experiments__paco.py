@@ -17,8 +17,8 @@ from pprint import pprint
 
 from tqdm import tqdm, trange
 
-from paco_traj import *
-from experiments import initialize_rng, safe_dump
+from src.paco_traj import *
+from src.experiments import initialize_rng, safe_dump
 
 
 

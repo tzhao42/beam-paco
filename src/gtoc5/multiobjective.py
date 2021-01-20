@@ -6,7 +6,7 @@
 
 import numpy as np
 
-from .constants import MASS_MAX, MASS_MIN, TIME_MAX
+from src.gtoc5.constants import MASS_MAX, MASS_MIN, TIME_MAX
 
 
 
