@@ -30,6 +30,7 @@ pip3 install -e .
 pip3 install black
 pip3 install isort
 pip3 install jupyter
+# potential dependency on nodejs -- not sure
 pip3 install jupyterlab
 pip3 install jupyterlab_vim
 
