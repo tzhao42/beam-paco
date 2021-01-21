@@ -1,9 +1,3 @@
-#
-# Copyright (c) 2017 Luis F. Simoes (github: @lfsimoes)
-#
-# Licensed under the MIT License. See the LICENSE file for details.
-
-
 import inspect
 import os
 import pickle
@@ -16,7 +10,7 @@ from src.gtoc5.constants import *
 from src.gtoc5.lambert import lambert_eval, lambert_optimize_dt
 from src.gtoc5.multiobjective import rate_traj
 
-# ==================================== ## ==================================== #
+# =============================== ## =============================== #
 
 
 def seq(mission, incl_flyby=True):
@@ -60,8 +54,7 @@ def score(mission):
     return score
 
 
-# ==================================== ## ==================================== #
-
+# =============================== ## =============================== #
 
 def mission_to_1st_asteroid(ast1, legs1=None):
     """
@@ -70,21 +63,23 @@ def mission_to_1st_asteroid(ast1, legs1=None):
     Rendezvous leg uses data obtained from a low-thrust global optimization,
     and self-flyby leg determined via the linear acceleration model.
     """
+
     # Summary data for the launch leg loaded from the results of
     # mass/time-optimal low-thrust global optimizations described in:
     # - http://dx.doi.org/10.2420/AF08.2014.45 (Sec. 2)
     # - https://github.com/esa/pagmo/blob/master/src/problem/gtoc5_launch.cpp
+
     if legs1 is None:
         # get path to where the current module is located
         path = os.path.abspath(
             os.path.dirname(inspect.getsourcefile(lambda: 0))
         )
-        # 		legs1 = pickle.load(open(path + '/mass_optimal_1st_leg.pkl', 'rb'))
         legs1 = pickle.load(open(path + "/time_optimal_1st_leg.pkl", "rb"))
-
+        print(legs1)
     try:
         # locate in `legs1` the tuple corresponding to the leg towards `ast1`
         leg1 = next(ast_leg for ast_leg in legs1 if ast_leg[0] == ast1)
+        print(leg1)
     except StopIteration:
         raise Exception(
             "No known launch leg towards asteroid %s (id: %d)"
@@ -120,7 +115,7 @@ def mission_to_1st_asteroid(ast1, legs1=None):
     return mission
 
 
-# ==================================== ## ==================================== #
+# =============================== ## =============================== #
 
 LEG_CACHE = {}
 
@@ -180,8 +175,8 @@ def add_asteroid(mission, next_ast, use_cache=True, stats=None, **kwargs):
     return True
 
 
-# ==================================== ## ==================================== #
-# ------------------------------------ # Define rendezvous and self-flyby legs
+# =============================== ## =============================== #
+# Define rendezvous and self-flyby legs
 
 
 def rendezvous_leg(
@@ -252,8 +247,8 @@ def self_flyby_leg(mission):
     )
 
 
-# ==================================== ## ==================================== #
-# ------------------------------------ # Evaluation of rendezvous legs
+# =============================== ## =============================== #
+# Evaluation of rendezvous legs
 
 
 class gtoc5_rendezvous(lambert_eval):
