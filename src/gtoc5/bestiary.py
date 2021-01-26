@@ -7,7 +7,7 @@ Compilation of high-scoring trajectories.
 # Licensed under the MIT License. See the LICENSE file for details.
 
 
-from src.gtoc5 import *
+from src.gtoc5.gtoc5 import *
 
 
 def build_traj(seq, **kwargs):

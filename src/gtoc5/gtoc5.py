@@ -56,6 +56,7 @@ def score(mission):
 
 # =============================== ## =============================== #
 
+
 def mission_to_1st_asteroid(ast1, legs1=None):
     """
     Initialize a `mission` data structure containing a leg from Earth to the
@@ -75,7 +76,6 @@ def mission_to_1st_asteroid(ast1, legs1=None):
             os.path.dirname(inspect.getsourcefile(lambda: 0))
         )
         legs1 = pickle.load(open(path + "/time_optimal_1st_leg.pkl", "rb"))
-        print(legs1)
     try:
         # locate in `legs1` the tuple corresponding to the leg towards `ast1`
         leg1 = next(ast_leg for ast_leg in legs1 if ast_leg[0] == ast1)
@@ -326,5 +326,5 @@ class gtoc5_rendezvous_agg(gtoc5_rendezvous):
     def fail(self):
         super(gtoc5_rendezvous_agg, self).fail()
         # The resource rating ranges in [0, 1]. We signal failure to optimize
-        # leg with an out-of-bounds value below the worst possible rating (0.0).
+        # leg with an out-of-bounds value below the worst possible rating (0.0)
         self.resource_rating = -1.0
