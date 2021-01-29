@@ -5,8 +5,15 @@ import numpy as np
 import pykep as pk
 from scipy.optimize import minimize_scalar
 
-from src.gtoc5.constants import (DAY2SEC, G0, MU_SUN, SEC2DAY, I_sp, T_max,
-                                 thrust_tol)
+from src.gtoc5.constants import (
+    DAY2SEC,
+    G0,
+    MU_SUN,
+    SEC2DAY,
+    I_sp,
+    T_max,
+    thrust_tol,
+)
 from src.gtoc5.multiobjective import pareto_front
 
 
@@ -30,8 +37,9 @@ class obj_value(float):
 def expand_kwargs(func):
     """
     Allows for kwargs that are to be sent to a function to be provided within a
-    dictionary sent as the last *arg. Useful when a function's caller can be set
-    to redirect *args, but not *kwargs (e.g.: np.apply_along_axis, until 1.9.0).
+    dictionary sent as the last *arg. Useful when a function's caller can be 
+    set to redirect *args, but not *kwargs (e.g.: np.apply_along_axis, until 
+    1.9.0).
     """
 
     @wraps(func)
@@ -182,7 +190,7 @@ def lambert_optimize_dt(
     dep_m
         spacecraft's mass (kg) at departure
     leg_dT
-        an exact leg_dT to be used in the Lambert arc
+        an exact leg_dT (change in time) to be used in the Lambert arc
         (if specified, no optimization is then performed over leg_dT)
     leg_dT_bounds
         bounds on the time of flight
